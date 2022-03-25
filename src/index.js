@@ -10,16 +10,16 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-var multer = require('multer');  
-var upload = multer();
+// var multer = require('multer');  
+// var upload = multer();
 
-app.use(upload.array()); 
-app.use(express.static('public'));
+// app.use(upload.array()); 
+// app.use(express.static('public'));
 
 
 
 const mongoose = require('mongoose');
-mongoose.connect("mongodb+srv://group13:UEEqzwKeluhyT2uM@cluster0.hkvjs.mongodb.net/group5Database?retryWrites=true&w=majority",{useNewUrlParser:true})
+mongoose.connect("mongodb+srv://group13:UEEqzwKeluhyT2uM@cluster0.hkvjs.mongodb.net/group17Database?retryWrites=true&w=majority",{useNewUrlParser:true})
 .then(()=>console.log("MongoDb connected"))
 .catch(err=>console.log(err))
 app.use('/',route);
