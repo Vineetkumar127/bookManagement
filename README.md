@@ -1,6 +1,8 @@
 # Thorium
 
 ## Project - Books Management
+Group Members:
+1. Shabdika Pandey
 
 repo link : https://github.com/Manish-162403/bookManagement.git
 database link: mongodb+srv://group13:UEEqzwKeluhyT2uM@cluster0.hkvjs.mongodb.net/group5Database?retryWrites=true&w=majority
