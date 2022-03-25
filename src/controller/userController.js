@@ -74,19 +74,19 @@ try{
     let data= req.body
 
 
-if(!isValid(data.email)){return res.status(400).send({status:false, ERROR: "please input valid emailId"})}
+if(!isValid(data.email)){return res.status(401).send({status:false, ERROR: "please input valid emailId"})}
 
-if(!isValid(data.password)){return res.status(400).send({status:false, ERROR: "please input valid password"})}
+if(!isValid(data.password)){return res.status(401).send({status:false, ERROR: "please input valid password"})}
 
 const user= await userModel.findOne({email:data.email, password:data.password})
 if(!user){return res.status(404).send({status:false, ERROR:"User not  found"})}
 
 const token = jwt.sign({
-    userId: data.emaill._id,
+    userId: data.email._id,
 }, "project3group17",{expiresIn:'300s'})
 
 res.status(200).setHeader("group17", token)
-return res.status(201).send({status:true,message: "SuccessFully LoggedIn",TOKEN:token})
+return res.status(200).send({status:true,message: "SuccessFully LoggedIn",TOKEN:token})
 
 }catch (err){
     res.status(500).send({status:false, ERROR: err.message})
