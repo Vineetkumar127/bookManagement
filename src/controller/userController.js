@@ -15,15 +15,14 @@ const isvalidTitle = function(title){
 }
 
 
-
-
+// createUser.....................................................................
 
 const createUser = async function(req,res){
   
 try{ 
     
     const data = req.body
-//if(!data){return res.status(400).send({status:false, ERROR: "Please input some data to create User"})}
+
 
 if(!isValidRequestBody(data)){return res.status(400).send({status:false, ERROR: "please provide Data"})}
 
@@ -67,13 +66,13 @@ let duplicateMobile = await userModel.findOne({phone: data.phone})
    return res.status(500).send({Status:false, ERROR: error.message })
 }}
 
-
+// user login..............................................................................
 
 const userLogin = async function(req,res){
 
 try{
     let data= req.body
-//const requiredData ={ email:data.email, password:data.password}
+
 
 if(!isValid(data.email)){return res.status(400).send({status:false, ERROR: "please input valid emailId"})}
 
