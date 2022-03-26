@@ -25,6 +25,7 @@ const userSchema = new mongoose.Schema({
         type:String,
         lowercase:true,
         required:true,
+        lowercase:true,
         unique:true
         }, 
 
