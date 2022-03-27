@@ -82,7 +82,7 @@ const user= await userModel.findOne({email:data.email, password:data.password})
 if(!user){return res.status(404).send({status:false, ERROR:"User not  found"})}
 
 const token = jwt.sign({
-    userId: data.emaill._id,
+    userId: data.email._id,
 }, "project3group17",{expiresIn:'300s'})
 
 res.status(200).setHeader("group17", token)
