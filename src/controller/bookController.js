@@ -130,9 +130,7 @@ const getBook = async function (req, res) {
         }
 
         const allbook = books.sort(function (a, b) { return a.title.toLowerCase() > b.title.toLowerCase() ? 1 : -1 })
-        // const bookDetail = books.sort(function(a,b)
-        // {if(a.title.toLowerCase() < b.title.toLowerCase()) {return -1}; 
-        // if(a.title.toLowerCase() > b.title.toLowerCase()){return 1};})
+        
         return res.status(200).send({ status: true, bookList: allbook })
 
 
