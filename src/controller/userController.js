@@ -22,6 +22,8 @@ const createUser = async function(req,res){
 try{ 
     
     const data = req.body
+    const query = req.query
+    if(isValidRequestBody(query)){return res.status(400).send({status:false,error:'this is not allowed'})}
 
 
 if(!isValidRequestBody(data)){return res.status(400).send({status:false, ERROR: "please provide Data"})}
@@ -67,7 +69,10 @@ const userLogin = async function(req,res){
 
 try{
     let data= req.body
-if(!body){return res.status(400).send({status:false, ERROR: "please input Somw Data"})}
+    let query= req.query
+    if(isValidRequestBody(query)){return res.status(400).send({status:false,error:'this is not allowed'})}
+
+if(!data){return res.status(400).send({status:false, ERROR: "please input Somw Data"})}
 
 if(!isValid(data.email)){return res.status(401).send({status:false, ERROR: "please input valid emailId"})}
 
